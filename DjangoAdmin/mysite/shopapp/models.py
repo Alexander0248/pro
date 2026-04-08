@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
+from decimal import Decimal
 
 class Product(models.Model):
     class Meta:
@@ -8,8 +10,15 @@ class Product(models.Model):
         # verbose_name_plural = "products"
     name = models.CharField(max_length=100)
     description = models.TextField(null=False, blank=True)
-    price = models.DecimalField(default=0,max_digits=8, decimal_places=2)
-    discount = models.SmallIntegerField(default=0)
+    #price = models.DecimalField(default=0, max_digits=8, decimal_places=2)
+    price = models.DecimalField(default=0, max_digits=8, decimal_places=2, validators=[MinValueValidator(Decimal('0.00'))])
+    #discount = models.SmallIntegerField(default=0)
+    discount = models.SmallIntegerField(
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(100)
+        ]
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     archived = models.BooleanField(default=False)
 
