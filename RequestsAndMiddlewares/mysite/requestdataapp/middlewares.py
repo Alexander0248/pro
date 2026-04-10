@@ -2,10 +2,13 @@ import time
 
 from django.http import HttpRequest, HttpResponse
 
+
 def setup_useragent_on_request_middleware(get_response):
 
     print("initial call")
+
     def middleware(request: HttpRequest):
+
         print("before get response")
         request.user_agent = request.META["HTTP_USER_AGENT"]
         response = get_response(request)
@@ -13,6 +16,7 @@ def setup_useragent_on_request_middleware(get_response):
         return response
 
     return middleware
+
 
 class CountRequestsMiddleware:
     def __init__(self, get_response):
@@ -28,7 +32,7 @@ class CountRequestsMiddleware:
         if self.request_time:
             if (round(time.time()) - self.request_time['time'] < time_delay and
                     self.request_time['ip_address'] == ip_address):
-                return HttpResponse("A repeat request is only possible after 10 seconds.")
+                return HttpResponse("A repeat request is only possible after 10 seconds.", status=429)
 
         self.request_time = {'time': round(time.time()), 'ip_address': ip_address}
 
