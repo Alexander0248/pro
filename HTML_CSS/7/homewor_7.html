@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>homework</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <style>
+
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var container = 
+            document.querySelector('.popup-container');
+                var popupButtons = 
+            document.querySelectorAll('.open-popup');
+                for (let i=0; i < popupButtons.length; i++) {
+                    popupButtons[i].addEventListener('click', function(){
+                        container.style.display = 'flex';
+                });
+            }
+            
+            
+            container.addEventListener('click', function(event){
+                if(event.target == container) {
+                        container.style.display = 'none';
+                        }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="popup-container">
+            <form class="popup">
+                <input class="form-select form-control" type="text" placeholder="Введите ваше имя">
+                <input class="form-select form-control" placeholder="Email">
+                <input class="dark-button btn btn-success" type="submit" value="Отправить">
+            </form>
+        </div>
+        <header>
+            <div class="fixed-container">
+                <div class="fixed_container_1">
+                    <a class="fixed_container_1 href="#">Услуги</a>
+                    <a class="fixed_container_1 href="#">Портфолио</a>
+                    <a class="fixed_container_1 href="#">Стоимость</a>
+                </div>
+                <div>
+                    <span>+7 909 999-55-44</span>
+                    <button class="light-button open-popup">Заказать звонок</button>
+                </div>
+            </div>
+        </header>
+        <section class="first-block">
+            <div class="fixed-container">
+                <h1 style="font-size: 55px;">Дмитрий Алексеев</h1>
+                <p>Frontend-разработчик и веб-верстальщик</p>
+                <button class="dark-button open-popup">Узнать больше</button>
+            </div>
+        </section>
+        <section>
+            <div class="fixed-container">
+                <h2 style="font-size: 30px;">Что я делаю</h2>
+                <div class="services">
+                    <div>
+                        <img src="icons/1.png" alt="">
+                        Вёрстка лэндинг-страниц и сайтов любой сложности
+                    </div>
+                    <div>
+                        <img src="icons/2.png" alt="">
+                        Адаптивная вёрстка под все браузеры и устройства
+                    </div>
+                    <div>
+                        <img src="icons/3.png" alt="">
+                        Frontend-разработка и программирование
+                    </div>
+                    <div>
+                        <img src="icons/4.png" alt="">
+                        Исправление и доработка существующей вёрстки
+                    </div>
+                </div>
+                <button style="margin-top: 30px;" class="light-button open-popup">Узнать стоимость</button>
+            </div>
+        </section>
+        <section>
+            <div class="fixed-container">
+                <h2 style="font-size: 30px;">Примеры работ</h2>
+                <div class="services_2">
+                    <div>
+                        <img src="icons/e1.png" alt="">
+                        Сайт психолога Веры Антоновой
+                    </div>
+                    <div>
+                        <img src="icons/e2.png" alt="">
+                        Сайт магазина детской одежды
+                    </div>
+                    <div>
+                        <img src="icons/e3.png" alt="">
+                        сайт магазина Рыболов
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="price-info">
+            <div class="fixed-container">
+                <div class="price_info_2">
+                    <div class="column-left">
+                        <h2>Адаптивная вёрстка под все устройства и браузер от 1000 р. всего за 4 часа.*</h2>
+                        <p>* Срок и стоимость могут отличаться от сложности и рассчитываются индивидуально 
+                            в зависимости от сложности задач.
+                        </p>
+                    </div>
+                    <div class="column-right">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="fixed-container">
+                <div class="footer_server">
+                    <div>
+                        <ul class="list_ul_1">
+                            <li><a href="#">Услуги</a></li>
+                            <li><a href="#">Портфолио</a></li>
+                            <li><a href="#">Стоимость</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list_ul_1">
+                            <li><span>dmitry@alekseev.com</span></li>
+                            <li><span>+7 909 999-55-44</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button class="light-button open-popup">Заказать звонок</button>
+                        <div class="footer_server_1">
+                            <div>
+                                <a href="https://www.facebook.com" target="_blank"><img src="icons/fb.png" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="https://vk.com" target="_blank"><img src="icons/vk.png" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="https://www.youtube.com" target="_blank"><img src="icons/you.png" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="https://telegram.org" target="_blank"><img src="icons/telegram.png" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="https://www.instagram.com" target="_blank"><img src="icons/inst.png" alt=""></a>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
