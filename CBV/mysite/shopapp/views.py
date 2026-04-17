@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from .forms import GroupForm
 from .models import Product, Order
 
@@ -54,16 +54,29 @@ class ProductsListView(ListView):
     queryset = Product.objects.filter(archived=False)
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(PermissionRequiredMixin, CreateView):
     model = Product
     fields = "name", "price", "description", "discount"
+    permission_required = 'shopapp.add_product'
     success_url = reverse_lazy("shopapp:products_list")
 
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
 
-class ProductUpdateView (UpdateView):
+
+class ProductUpdateView (PermissionRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Product
     fields = "name", "price", "description", "discount"
     template_name_suffix = "_update_form"
+    permission_required = 'shopapp.change_product'
+
+    def test_func(self):
+        if self.request.user.is_superuser:
+            return True
+        product = self.get_object()
+        is_author = product.created_by == self.request.user
+        return is_author
 
     def get_success_url(self):
         return reverse(
@@ -83,7 +96,7 @@ class ProductDeleteView (DeleteView):
         return HttpResponseRedirect(success_url)
 
 
-class OrdersListView(ListView):
+class OrdersListView(LoginRequiredMixin, ListView):
     queryset = (
         Order.objects
         .select_related("user")
@@ -91,7 +104,8 @@ class OrdersListView(ListView):
     )
 
 
-class OrderDetailView(DetailView):
+class OrderDetailView(PermissionRequiredMixin, DetailView):
+    permission_required = "shopapp.view_order"
     queryset = (
         Order.objects
         .select_related("user")

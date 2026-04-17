@@ -13,7 +13,9 @@
         <div>Archived: {{ product.archived }}</div>
     </div>
     <div>
-        <a href="{% url 'shopapp:product_update' pk=product.pk %}">Update product</a>
+        {% if user.is_superuser or perms.shopapp.change_product and product.created_by == user %}
+            <a href="{% url 'shopapp:product_update' pk=product.pk %}">Update product</a>
+        {% endif %}
     </div>
     <div>
         <a href="{% url 'shopapp:product_delete' pk=product.pk %}">Archive product</a>
