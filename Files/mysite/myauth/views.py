@@ -5,13 +5,44 @@ from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.contrib.auth import authenticate, login
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import CreateView, UpdateView, ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from .models import Profile, User
 
-from .models import Profile
 
-
-class AboutMeView(TemplateView):
+class AboutMeView(LoginRequiredMixin, UpdateView):
+    model = Profile
+    fields = ["avatar",]
     template_name = "myauth/about-me.html"
+    success_url = reverse_lazy("myauth:about-me")
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile
+
+
+class UserListView(ListView):
+    model = User
+    template_name = "myauth/user_list.html"
+    context_object_name = "users"
+
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = "myauth/user_detail.html"
+    context_object_name = "user_obj"
+
+
+class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Profile
+    fields = ["avatar"]
+    template_name = "myauth/profile_update.html"
+
+    def test_func(self):
+        profile = self.get_object()
+        return self.request.user.is_staff or self.request.user == profile.user
+
+    def get_success_url(self):
+        return reverse_lazy("myauth:user-detail", kwargs={"pk": self.object.user.pk})
 
 
 class RegisterView(CreateView):
