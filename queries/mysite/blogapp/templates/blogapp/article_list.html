@@ -1,0 +1,26 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+  Список статей
+{% endblock %}
+
+
+{% block body %}
+<h1>Список статей</h1>
+<ul>
+    {% for article in articles %}
+    <li>
+        <h2>{{ article.title }}</h2>
+        <p>Дата: {{ article.pub_date }}</p>
+        <p>Автор: {{ article.author.name }}</p>
+        <p>Категория: {{ article.category.name }}</p>
+        <p>Тэги:
+            {% for tag in article.tags.all %}
+                {{ tag.name }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+{% endblock %}
