@@ -1,0 +1,35 @@
+2026-04-30 05:34:33,117 [INFO] shopapp.views: Rendering shop index
+2026-04-30 05:34:34,809 [INFO] shopapp.views: Rendering shop index
+2026-04-30 05:42:26,242 [INFO] django.utils.autoreload: /home/user/PycharmProjects/python_django/logging/mysite/mysite/settings.py changed, reloading.
+2026-04-30 05:42:29,521 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-04-30 06:05:03,499 [INFO] django.utils.autoreload: /home/user/PycharmProjects/python_django/logging/mysite/mysite/urls.py changed, reloading.
+2026-04-30 06:09:48,315 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-05-04 00:45:56,155 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-05-04 00:46:57,531 [WARNING] django.request: Not Found: /
+2026-05-04 00:47:51,763 [WARNING] django.request: Not Found: /favicon.ico
+2026-05-04 00:50:53,828 [INFO] django.utils.autoreload: /home/user/PycharmProjects/python_django/logging/mysite/shopapp/views.py changed, reloading.
+2026-05-04 00:51:11,467 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-05-04 00:51:29,819 [WARNING] django.request: Not Found: /favicon.ico
+2026-05-04 00:51:48,388 [INFO] django.utils.autoreload: /home/user/PycharmProjects/python_django/logging/mysite/shopapp/views.py changed, reloading.
+2026-05-04 00:51:55,404 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-05-04 00:52:07,719 [ERROR] django.request: Internal Server Error: /shop/products/export/
+Traceback (most recent call last):
+  File "/home/user/PycharmProjects/python_django/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/python_django/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/python_django/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/python_django/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/PycharmProjects/python_django/logging/mysite/shopapp/views.py", line 143, in get
+    name = elem["naem"]
+           ~~~~^^^^^^^^
+KeyError: 'naem'
+2026-05-04 01:06:34,118 [INFO] django.utils.autoreload: /home/user/PycharmProjects/python_django/logging/mysite/shopapp/views.py changed, reloading.
+2026-05-04 01:06:40,237 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2026-05-04 01:07:01,986 [WARNING] django.request: Not Found: /favicon.ico
