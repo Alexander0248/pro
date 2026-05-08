@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="shopapp.product" pk="3">
+        <field name="name" type="CharField">Laptop</field>
+        <field name="description" type="TextField">Beatae debitis tenetur quod temporibus, Desktop</field>
+        <field name="price" type="DecimalField">1999.00</field>
+        <field name="discount" type="SmallIntegerField">0</field>
+        <field name="created_at" type="DateTimeField">2026-04-06T08:17:38.546000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="6">
+        <field name="name" type="CharField">Desktop</field>
+        <field name="description" type="TextField">it's very smart</field>
+        <field name="price" type="DecimalField">2599.00</field>
+        <field name="discount" type="SmallIntegerField">10</field>
+        <field name="created_at" type="DateTimeField">2026-04-06T08:17:38.546000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField">products/product_6/preview/pycharm.png</field>
+    </object>
+    <object model="shopapp.product" pk="7">
+        <field name="name" type="CharField">Smartphone</field>
+        <field name="description" type="TextField">Beatae debitis tenetur quod temporibus repudiandae, ducimus corporis ipsum veniam exercitationem earum cum natus eligendi obcaecati recusandae molestiae, iure eligendi nihil quia dolore veritatis quod commodi natus necessitatibus soluta? Officiis consectetur beatae expedita natus earum iste provident illum nostrum ullam, odit animi maiores saepe quae officiis dolores nisi, nulla molestias corrupti, amet vero dolores illo expedita reiciendis mollitia at autem, natus laborum id numquam vitae adipisci? Nulla enim optio a obcaecati earum id vel, praesentium exercitationem aut cum, ad dolores expedita iusto ut, eaque fugit architecto et voluptas harum ipsam, facilis quas reiciendis asperiores. Similique possimus a alias magnam deleniti, suscipit adipisci sit tota</field>
+        <field name="price" type="DecimalField">987.00</field>
+        <field name="discount" type="SmallIntegerField">25</field>
+        <field name="created_at" type="DateTimeField">2026-04-06T08:17:38.546000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="8">
+        <field name="name" type="CharField">Tablet</field>
+        <field name="description" type="TextField">great tablet</field>
+        <field name="price" type="DecimalField">1234.00</field>
+        <field name="discount" type="SmallIntegerField">0</field>
+        <field name="created_at" type="DateTimeField">2026-04-10T07:29:07.494000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="10">
+        <field name="name" type="CharField">Phone 3</field>
+        <field name="description" type="TextField">phone 3</field>
+        <field name="price" type="DecimalField">999.42</field>
+        <field name="discount" type="SmallIntegerField">12</field>
+        <field name="created_at" type="DateTimeField">2026-04-10T09:09:59.548000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="11">
+        <field name="name" type="CharField">Tablet 2</field>
+        <field name="description" type="TextField">a new tablet</field>
+        <field name="price" type="DecimalField">1500.00</field>
+        <field name="discount" type="SmallIntegerField">15</field>
+        <field name="created_at" type="DateTimeField">2026-04-10T09:12:37.372000+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+    <object model="shopapp.product" pk="12">
+        <field name="name" type="CharField">Phone23</field>
+        <field name="description" type="TextField">new</field>
+        <field name="price" type="DecimalField">199.00</field>
+        <field name="discount" type="SmallIntegerField">10</field>
+        <field name="created_at" type="DateTimeField">2026-04-27T10:51:51.024305+00:00</field>
+        <field name="archived" type="BooleanField">False</field>
+        <field name="preview" type="FileField"></field>
+    </object>
+</django-objects>
