@@ -1,0 +1,21 @@
+[project]
+name = "prod"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Александр Вольский",email = "alexander.volsky@t2.ru"}
+]
+requires-python = ">=3.12"
+dependencies = [
+    "django (>=6.0.5,<7.0.0)",
+    "django-rest-framework (>=0.1.0,<0.2.0)",
+    "django-filter (>=25.2,<26.0)",
+    "django-debug-toolbar (>=6.3.0,<7.0.0)",
+    "pillow (>=12.2.0,<13.0.0)",
+    "gunicorn (>=26.0.0,<27.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
