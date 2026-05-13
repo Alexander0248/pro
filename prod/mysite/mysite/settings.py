@@ -204,5 +204,6 @@ logging.config.dictConfig({
 })
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://pro-production-a7b7.up.railway.app',
+    "https://pro-production-a7b7.up.railway.app",
+    "https://*.up.railway.app",  # Разрешает любые поддомены Railway
 ]
