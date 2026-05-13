@@ -2,7 +2,7 @@ FROM python:3.11
 
 ENV PYTHONUNBUFFERED=1
 
-WORKDIR /prod
+WORKDIR /app
 
 RUN pip install --upgrade pip "poetry==2.4.1"
 RUN poetry config virtualenvs.create false --local
